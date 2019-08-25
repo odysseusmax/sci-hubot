@@ -59,7 +59,7 @@ def _core(c, m):
             
             file_url = 'http:'+file_url
         
-        snt.edit_text(text = f"Unlocked document URL.\n\n{file_url}", disable_web_page_preview = True)
+        snt.edit_text(text = f"Unlocked document URL.\n\n{file_url}")
         
         users.pop(m.chat.id)
         
