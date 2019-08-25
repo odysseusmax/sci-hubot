@@ -31,12 +31,10 @@ def _core(c, m):
     try:
         
         r = session.get(req_url)
-        print(r.text)
         
         soup = BeautifulSoup(r.text, "html.parser")
         
         article = soup.find("div", id="article")
-        print(article)
         
         if(not article):
             
