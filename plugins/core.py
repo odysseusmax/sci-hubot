@@ -27,10 +27,17 @@ def _core(c, m):
     session = requests.Session()
     
     req_url = API_URL+m.text
+    
+    headers = dict(User-Agent="Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
+        Accept-Language = "en-US,en;q=0.9",
+        Proxy-Authorization= "Basic VVZQTnYyLTU5NWIzYjc5Mzk2MTc1YmEzNmExNjMxNWFiNmI4OTM5NTA4MmUxYzdhNDA1MTI0MGE5ZTA1NGRhMTU3NWJjOTUmYzgwdjBAZW1haWx0ZXguY29tOjJjZTY3NTA1Mjg0NjZlNDczNzY0ZTU1ZmRiNDgzODFhZTNkZmUyOWI5MDZiMmVlYzA3YTljNjc3ODFlOGM5OTI="
+    )
 
     try:
         
-        r = session.get(req_url)
+        s = session.get(API_URL, headers=headers)
+        
+        r = session.get(req_url, headers=headers)
         
         soup = BeautifulSoup(r.text, "html.parser")
         
