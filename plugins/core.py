@@ -31,7 +31,7 @@ def _core(c, m):
     try:
         
         r = session.get(req_url)
-        print(r.status_code)
+        print(r.text)
         
         soup = BeautifulSoup(r.text, "html.parser")
         
